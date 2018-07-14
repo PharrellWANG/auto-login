@@ -43,9 +43,11 @@ Step 3: Pick one webdriver, download and install it. If you use Chrome driver, `
 
 ## Usage
 
-Step 1: Make command file executable: ``chmod +x auto-login.command``
+Step 1: open ``login.py``, replace ``your-eid`` in line 35 with your eid, then replace ``your-pw`` in line 36 with your pw.
 
-Step 2: Automatically execute it upon reboot: ``crontab -e``, then add ``@reboot /path/to/auto-login.command``
+Step 2: Make command file executable: ``chmod +x auto-login.command``
+
+Step 3: Automatically execute it upon reboot: ``crontab -e``, then add ``@reboot /path/to/auto-login.command``
 
 > Note: You need to provide the correct path for crontab.
 
@@ -53,6 +55,9 @@ Done
 
 ## Outcome
 Every time you reboot the computer, you can directly access www.google.com.hk. There's no need to submit a login form any more.
+
+## Caveat
+Please keep your ``login.py`` secretly, since it shall contain your credentials.
 
 ## Author
 Pharrell Z.X WANG (*wzxnuaa@gmail.com*)
