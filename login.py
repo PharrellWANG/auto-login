@@ -34,7 +34,7 @@ except NoSuchElementException:
             pw = driver.find_element_by_name("ctx_pass")
             with open('credential.txt') as f:
                 content = f.readlines()
-            # you may also want to remove whitespace characters like `\n` at the end of each line
+            # remove whitespace characters like `\n` at the end of each line
             content = [x.strip() for x in content] 
             username.send_keys(content[0])
             pw.send_keys(content[1])
@@ -44,5 +44,5 @@ except NoSuchElementException:
             print('-----------------------------')
         driver.quit()
     except BaseException as e:
-        print('Error. Please inspect the codes for automating login process.')
+        print('Error: %s. Please inspect the codes for automating login process.' % e)
         driver.quit()
