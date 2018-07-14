@@ -32,8 +32,12 @@ except NoSuchElementException:
             driver.get("http://cp.cs.cityu.edu.hk:16978/loginform.html?https://www.google.com.hk/")
             username = driver.find_element_by_name("username")
             pw = driver.find_element_by_name("ctx_pass")
-            username.send_keys('your-eid')
-            pw.send_keys('your-pw')
+            with open('credential.txt') as f:
+                content = f.readlines()
+            # you may also want to remove whitespace characters like `\n` at the end of each line
+            content = [x.strip() for x in content] 
+            username.send_keys(content[0])
+            pw.send_keys(content[1])
             driver.find_element_by_name("modify").click()
             print('-----------------------------')
             print('Congrats! You have just logged in. Happy surfing!')
