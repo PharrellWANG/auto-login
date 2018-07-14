@@ -22,13 +22,9 @@ try:
     driver.quit()
 except NoSuchElementException:
     try:
-        # print('-----------------------------')
-        # print('Hint: Need to login for access CS network!')
         driver.get("http://cp.cs.cityu.edu.hk:16978/login.html?https://www.google.com.hk/")
         ele = driver.find_element_by_id('messageBox')
         if 'CityU CS Network Access Control' in ele.get_attribute('innerHTML'):
-            # print('We are now at cs network portal login form page.')
-            # WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.NAME, 'modify')))
             driver.get("http://cp.cs.cityu.edu.hk:16978/loginform.html?https://www.google.com.hk/")
             username = driver.find_element_by_name("username")
             pw = driver.find_element_by_name("ctx_pass")
@@ -44,5 +40,5 @@ except NoSuchElementException:
             print('-----------------------------')
         driver.quit()
     except BaseException as e:
-        print('Error: %s. Please inspect the codes for automating login process.' % e)
+        print('Error: %s. \nPlease inspect the codes for automating login process.' % e)
         driver.quit()
