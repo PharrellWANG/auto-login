@@ -3,13 +3,10 @@
 ## Motivation
 
 Every day before we can access the internet via CS wired network, a login form needs to be submitted in the browser. 
-Even if you can use the autofill function of Safari or Chrome to assist with the login process, 
-it's still **tedious** for you to click that *Secure Login* button and to wait few seconds.
+Even if you can use the auto-fill function of Safari or Chrome to assist with the login process, 
+it is still **tedious** for you to click that **Secure Login** button and to wait few seconds.
 
-Use the ``login.py`` python script to automate the login process.
-
-In addition, the ``logout.py`` snippet can help you logout if you accidentally 
-lost the access to the network logout button. (Most of the time, you don't need to logout at all.)
+We want the network login process to happen automatically.
 
 ## Features
 
@@ -18,14 +15,12 @@ lost the access to the network logout button. (Most of the time, you don't need 
 
 ## Requirements
 
+> For macOS users, 
+just follow the instructions in this file.
+For Linux users, 1. in **Installation - Step 3** you need to modify driver download link to download the correct driver for Linux, and 2. in **Usage - Step 2**, you need to use a ``.sh`` file instead of ``.command``.)
+
 * macOS or Linux
 * python3.6
-
-For macOS users, 
-just follow the instructions in this file.
-For Linux users, 
-1. in **Installation - Step 3** you need to modify driver download link to download the correct driver for Linux, and 
-2. in **Usage - Step 2**, you need to use a ``.sh`` file instead of ``.command``.)
 
 ## Installation
 
