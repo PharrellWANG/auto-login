@@ -1,1 +1,1 @@
-python /Users/pharrell/auto-login/login.py
+/Users/pharrell/anaconda3/bin/python /Users/pharrell/auto-login/login.py
