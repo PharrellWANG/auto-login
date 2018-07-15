@@ -2,7 +2,7 @@ import time
 from selenium import webdriver
 
 # Create a new instance of the web driver
-driver = webdriver.Chrome()
+driver = webdriver.Chrome('/usr/local/bin/chromedriver')
 
 driver.get("http://cp.cs.cityu.edu.hk:16978/logout.html")
 driver.quit()

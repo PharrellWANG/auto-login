@@ -43,7 +43,7 @@ Step 4: Pick one webdriver, download and install it. If you use Chrome driver, `
 
 ## Usage
 
-Step 1: in project root directory, ``touch credential.txt``, then open ``credential.txt`` with your favorite editor, type **your eid** in the first line, press enter, then type your password in the second line, save it. ``login.py`` will need to fetch your credential from this file.
+Step 1: in project root directory, ``touch credential.txt``, then open ``credential.txt`` with your favorite editor, type **your eid** in the first line, press enter, then type your password in the second line, save it. Modify ``login.py`` to provide right path for ``credential.txt``. ``login.py`` will need to fetch your credential from this file.
 
 Step 2: modify ``auto-login.command`` to provide right path.
 
