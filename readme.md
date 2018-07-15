@@ -10,7 +10,7 @@ We want the network login process to happen automatically.
 
 ## Features
 
-1. Automate login process for **CityU CS Network Access Control**. No need to click a button for submit form.
+1. Automate login process for **CityU CS Network Access Control**. No need to click a button for submitting form.
 2. Execute a command to logout. Cool. (Though the logic behind ``logout.py`` is simple).
 
 ## Requirements
@@ -26,11 +26,11 @@ For Linux users, 1. in **Installation - Step 3** you need to modify driver downl
 
 Step 1: Clone the project to a suitable location, ``git clone https://github.com/PharrellWANG/auto-login.git``. You will need to keep this project in your file system. To uninstall it, just delete the project.
 
-Step 1: ``pip install selenium``
+Step 2: ``pip install selenium``
 
-Step 2: ``brew instal jq``
+Step 3: ``brew install jq``
 
-Step 3: Pick one webdriver, download and install it. If you use Chrome driver, ``login.py`` can be directly invoked; otherwise, you need to modify **line 9** in ``login.py`` to use other drivers.
+Step 4: Pick one webdriver, download and install it. If you use Chrome driver, ``login.py`` can be directly invoked; otherwise, you need to modify **line 9** in ``login.py`` to use other drivers.
 
 - For Chrome: download and install *chromedriver*, ``wget https://chromedriver.storage.googleapis.com/2.40/chromedriver_mac64.zip && unzip chromedriver_mac64.zip && sudo mv chromedriver /usr/local/bin``
 
@@ -40,13 +40,11 @@ Step 3: Pick one webdriver, download and install it. If you use Chrome driver, `
 
 Step 1: in project root directory, ``touch credential.txt``, then open ``credential.txt`` with your favorite editor, type **your eid** in the first line, press enter, then type your password in the second line, save it. ``login.py`` will need to fetch your credential from this file.
 
-Step 2: Make command file executable: ``chmod +x auto-login.command``
+Step 2: modify ``auto-login.command`` to provide right path.
 
-Step 3: Automatically execute it upon reboot: ``crontab -e``, then add ``@reboot /path/to/auto-login.command``
+Step 3: Make command file executable: ``chmod +x auto-login.command``
 
-> Note: You need to provide the correct path for crontab.
-
-Done
+Step 4: Automatically execute it upon reboot: ``crontab -e``, then add ``@reboot /path/to/auto-login.command``. Replace ``/path/to/auto-login.commands`` with appropriate path.
 
 ## Outcome
 Every time you reboot the computer, you can directly access www.google.com.hk. There's no need to submit a login form any more.
@@ -55,7 +53,7 @@ Every time you reboot the computer, you can directly access www.google.com.hk. T
 Please keep your ``credential.txt`` secretly, since it shall contain your credentials.
 
 ## Author
-Pharrell Z.X WANG (*wzxnuaa@gmail.com*)
+Pharrell Z.X. WANG (*wzxnuaa@gmail.com*)
 
 ## License
 MIT

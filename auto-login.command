@@ -1,1 +1,1 @@
-python login.py
+python /Users/pharrell/auto-login/login.py
