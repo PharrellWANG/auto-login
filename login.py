@@ -22,23 +22,23 @@ try:
     driver.quit()
 except NoSuchElementException:
     try:
-        driver.get("http://cp.cs.cityu.edu.hk:16978/login.html?https://www.google.com.hk/")
-        ele = driver.find_element_by_id('messageBox')
-        if 'CityU CS Network Access Control' in ele.get_attribute('innerHTML'):
-            driver.get("http://cp.cs.cityu.edu.hk:16978/loginform.html?https://www.google.com.hk/")
-            username = driver.find_element_by_name("username")
-            pw = driver.find_element_by_name("ctx_pass")
-            with open('/Users/pharrell/auto-login/credential.txt') as f:
-                content = f.readlines()
-            # remove whitespace characters like `\n` at the end of each line
-            content = [x.strip() for x in content] 
-            username.send_keys(content[0])
-            pw.send_keys(content[1])
-            driver.find_element_by_name("modify").click()
-            print('-----------------------------')
-            print('Congrats! You have just logged in. Happy surfing!')
-            print('-----------------------------')
+        # driver.get("http://cp.cs.cityu.edu.hk:16978/login.html?https://www.google.com.hk/")
+        # ele = driver.find_element_by_id('messageBox')
+        # if 'CityU CS Network Access Control' in ele.get_attribute('innerHTML'):
+        driver.get("http://cp.cs.cityu.edu.hk:16978/loginform.html")
+        username = driver.find_element_by_name("username")
+        pw = driver.find_element_by_name("ctx_pass")
+        with open('/Users/pharrell/auto-login/credential.txt') as f:
+            content = f.readlines()
+        # remove whitespace characters like `\n` at the end of each line
+        content = [x.strip() for x in content] 
+        username.send_keys(content[0])
+        pw.send_keys(content[1])
+        driver.find_element_by_name("modify").click()
+        print('-----------------------------')
+        print('Congrats! You have just logged in. Happy surfing!')
+        print('-----------------------------')
         driver.quit()
     except BaseException as e:
-        print('Error: %s. \nPlease inspect the codes for automating login process.' % e)
+        print('Error: %s. \nPlease inspect the codes in ``login.py``.' % e)
         driver.quit()
