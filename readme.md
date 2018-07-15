@@ -1,5 +1,10 @@
 # Automate Network Access Control Login
 
+## You Might Not Need This Project
+
+If you are not in CityU, or if you don't use the wired network in CityU, 
+you do not need this project.
+
 ## Motivation
 
 Every day before we can access the internet via CS wired network, a login form needs to be submitted in the browser. 
