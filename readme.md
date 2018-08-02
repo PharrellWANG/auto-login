@@ -74,6 +74,8 @@ Step 3: Make command file executable: ``chmod +x auto-login.command`` or ``chmod
 
 Step 4: Automatically execute it upon reboot: ``crontab -e``, then add ``@reboot /path/to/auto-login.command``. Replace ``/path/to/auto-login.commands`` with appropriate path. Alternatively, you can add ``auto-login.command`` to login items in macOS. For Linux users, replace ``.command`` with ``.sh``.
 
+Note: If you want to invoke ``auto-login.command`` or ``auto-login.sh`` via SSH session, you need to use ``-X`` graphics forwarding. E.g., use ``ssh -X USER@HOST`` instead of ``ssh USER@HOST``. For extra guidance about how to ``-X`` forwarding, see [here](https://uisapp2.iu.edu/confluence-prd/pages/viewpage.action?pageId=280461906).
+
 ## Outcome
 Every time you reboot the computer, you can directly access www.google.com.hk. There's no need to submit a login form any more.
 
