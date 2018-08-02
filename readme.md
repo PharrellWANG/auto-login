@@ -16,40 +16,63 @@ We want the network login process to happen automatically.
 ## Features
 
 1. Automate login process for **CityU CS Network Access Control**. No need to click a button for submitting form.
-2. Execute a command to logout. Cool. (Though the logic behind ``logout.py`` is simple).
+2. Execute a command to logout. (Though the logic behind ``logout.py`` is simple).
 
 ## Requirements
-
-> For macOS users, 
-just follow the instructions in this file.
-For Linux users, 1. in **Installation - Step 3** you need to modify driver download link to download the correct driver for Linux, and 2. in **Usage - Step 2**, you need to use a ``.sh`` file instead of ``.command``.)
 
 * macOS or Linux
 * python3.6
 
-## Installation
+## Install
 
-Step 1: Clone the project to a suitable location, ``git clone https://github.com/PharrellWANG/auto-login.git``. You will need to keep this project in your file system. To uninstall it, just delete the project.
+### macOS
+1. Clone the project to a suitable location, e.g., your home directory ``/Users/USERNAME/``. 
+```
+git clone https://github.com/PharrellWANG/auto-login.git
+```
+> You will need to keep this project in your file system. To uninstall, just delete the project folder.
 
-Step 2: ``pip install selenium``
+2. Install Selenium to automate browsers. ``pip install selenium``
 
-Step 3: ``brew install jq``
+3. ``brew install jq``
 
-Step 4: Pick one webdriver, download and install it. If you use Chrome driver, ``login.py`` can be directly invoked; otherwise, you need to modify **line 9** in ``login.py`` to use other drivers.
+4. Download and install ``geckodriver`` for Firefox. 
 
-- For Chrome: download and install *chromedriver*, ``wget https://chromedriver.storage.googleapis.com/2.40/chromedriver_mac64.zip && unzip chromedriver_mac64.zip && sudo mv chromedriver /usr/local/bin``
+```
+wget https://github.com/mozilla/geckodriver/releases/download/v0.21.0/geckodriver-v0.21.0-macos.tar.gz
+tar -zxvf geckodriver-v0.21.0-macos.tar.gz && rm -rf geckodriver-v0.21.0-macos.tar.g
+chmod +x geckodriver
+sudo mv geckodriver /usr/local/bin
+```
+### Ubuntu 18.04 LTS
+1. Clone the project to a suitable location, e.g., your home directory ``/home/USERNAME/``.
+```
+git clone https://github.com/PharrellWANG/auto-login.git
+```
+> You will need to keep this project in your file system. To uninstall, just delete the project folder.
 
-- For Firefox: download and install *geckodriver*, ``wget https://github.com/mozilla/geckodriver/releases/download/v0.21.0/geckodriver-v0.21.0-macos.tar.gz && tar -zxvf geckodriver-v0.21.0-macos.tar.gz && chmod +x geckodriver && sudo mv geckodriver /usr/local/bin``
+2. Install Selenium to automate browsers. ``pip install selenium``
+
+3. Download and install ``geckodriver`` for Firefox. 
+
+You can check the latest release of geckodriver from [here](https://github.com/mozilla/geckodriver/releases).
+
+```
+wget https://github.com/mozilla/geckodriver/releases/download/v0.21.0/geckodriver-v0.21.0-linux64.tar.gz
+tar -zxvf geckodriver-v0.21.0-linux64.tar.gz && rm -rf geckodriver-v0.21.0-linux64.tar.gz
+chmod +x geckodriver
+sudo mv geckodriver /usr/local/bin
+```
 
 ## Usage
 
 Step 1: in project root directory, ``touch credential.txt``, then open ``credential.txt`` with your favorite editor, type **your eid** in the first line, press enter, then type your password in the second line, save it. Modify ``login.py`` to provide right path for ``credential.txt``. ``login.py`` will need to fetch your credential from this file.
 
-Step 2: modify ``auto-login.command`` to provide right path.
+Step 2: For macOS users, modify ``auto-login.command`` to provide right path; for Linux users, modify ``auto-login.sh`` to provide right path.
 
-Step 3: Make command file executable: ``chmod +x auto-login.command``
+Step 3: Make command file executable: ``chmod +x auto-login.command`` or ``chmod +x auto-login.sh``.
 
-Step 4: Automatically execute it upon reboot: ``crontab -e``, then add ``@reboot /path/to/auto-login.command``. Replace ``/path/to/auto-login.commands`` with appropriate path.
+Step 4: Automatically execute it upon reboot: ``crontab -e``, then add ``@reboot /path/to/auto-login.command``. Replace ``/path/to/auto-login.commands`` with appropriate path. Alternatively, you can add ``auto-login.command`` to login items in macOS. For Linux users, replace `.command`` with ``.sh``.
 
 ## Outcome
 Every time you reboot the computer, you can directly access www.google.com.hk. There's no need to submit a login form any more.
