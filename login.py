@@ -28,7 +28,7 @@ except NoSuchElementException:
         driver.get("http://cp.cs.cityu.edu.hk:16978/loginform.html")
         username = driver.find_element_by_name("username")
         pw = driver.find_element_by_name("ctx_pass")
-        with open('/home/pharrell/auto-login/credential.txt') as f:
+        with open('/Users/pharrell/auto-login/credential.txt') as f:
             content = f.readlines()
         # remove whitespace characters like `\n` at the end of each line
         content = [x.strip() for x in content] 
